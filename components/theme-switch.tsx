@@ -23,11 +23,11 @@ export const ThemeSwitch: FC<ThemeSwitchProps> = ({
 
   const onChange = () => {
     if (theme === "light") {
+      dispatch(setReduxTheme("dark"));
       setTheme("dark");
-      dispatch(setReduxTheme(false));
     } else {
+      dispatch(setReduxTheme("light"));
       setTheme("light");
-      dispatch(setReduxTheme(true));
     }
   };
 

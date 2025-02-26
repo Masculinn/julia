@@ -8,7 +8,7 @@ import {
   useState,
 } from "react";
 import { ImageMotionProps } from "./types";
-import { cn } from "../../lib/utils";
+import { cn } from "@/lib/utils";
 
 const ImageContainer: FC<ImageMotionProps> = (props) => {
   const {
@@ -142,7 +142,7 @@ const ImageContainer: FC<ImageMotionProps> = (props) => {
               isControlled: {
                 trigger: motionFn
                   ? !!triggers[index]
-                  : controlConfig?.isControlled ?? true,
+                  : (controlConfig?.isControlled ?? true),
               },
             }))}
             className={cn(

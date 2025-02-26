@@ -6,7 +6,7 @@ import {
 import { Children, FC, memo, useMemo } from "react";
 import { calculateDelay } from "./utils/calculateDelay";
 import MotionContainer from "./motion-container";
-import { cn } from "../../lib/utils";
+import { cn } from "@/lib/utils";
 
 const QueueContainer: FC<
   AnimationQueueProps & {

@@ -3,7 +3,7 @@ import {
   TransitionConfig,
   ViewAnimationControllerProps,
 } from "./types";
-import { cn } from "../../lib/utils";
+import { cn } from "@/lib/utils";
 import transitions from "./lib/transitions.lib";
 import { motion, useInView } from "motion/react";
 import React, { FC, memo, useId, useMemo, useRef } from "react";

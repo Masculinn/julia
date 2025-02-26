@@ -1,17 +1,13 @@
+import { ThemeState } from "@/types";
 import { createSlice } from "@reduxjs/toolkit";
 
-const INITIAL_STATE: boolean = true;
+const INITIAL_STATE: ThemeState = "dark";
 
 const themeSlice = createSlice({
   name: "theme",
   initialState: INITIAL_STATE,
   reducers: {
-    /**
-     * Set the theme
-     * @function setTheme
-     * @returns {boolean}
-     */
-    setTheme: (_, action): boolean => action.payload,
+    setTheme: (_, action): void => action.payload,
   },
 });
 
