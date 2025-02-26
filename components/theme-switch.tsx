@@ -2,9 +2,11 @@ import { FC, useState, useEffect } from "react";
 import { VisuallyHidden } from "@react-aria/visually-hidden";
 import { SwitchProps, useSwitch } from "@heroui/switch";
 import { useTheme } from "next-themes";
+import { setTheme as setReduxTheme } from "@/redux/slices/themeSlice";
 import clsx from "clsx";
 
 import { SunFilledIcon, MoonFilledIcon } from "@/components/icons";
+import { useDispatch } from "react-redux";
 
 export interface ThemeSwitchProps {
   className?: string;
@@ -16,11 +18,17 @@ export const ThemeSwitch: FC<ThemeSwitchProps> = ({
   classNames,
 }) => {
   const [isMounted, setIsMounted] = useState(false);
-
+  const dispatch = useDispatch();
   const { theme, setTheme } = useTheme();
 
   const onChange = () => {
-    theme === "light" ? setTheme("dark") : setTheme("light");
+    if (theme === "light") {
+      setTheme("dark");
+      dispatch(setReduxTheme(false));
+    } else {
+      setTheme("light");
+      dispatch(setReduxTheme(true));
+    }
   };
 
   const {
